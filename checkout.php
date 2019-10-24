@@ -9,7 +9,7 @@
       return actions.order.create({
         purchase_units: [{
           amount: {
-            value: <?echo $bolsa;?>
+            value: 10.00
           }
         }]
       });
