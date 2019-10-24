@@ -1,7 +1,27 @@
 <!--================Header Menu Area =================-->
   <? include("header.php"); ?>
     <!--================Header Menu Area =================-->
+<script src="https://www.paypal.com/sdk/js?client-id=AYJDDzK6t9E8bJ2Fjd3MR_P4isKtohuM0KwoIaDT0N_0Y57-QcrHJcqeSvdTo6wpmRsbsrGPQpkUapwq&currency=BRL"></script>
+<script>
+  paypal.Buttons({
 
+    createOrder: function(data, actions) {
+      return actions.order.create({
+        purchase_units: [{
+          amount: {
+            value: <?echo $bolsa;?>
+          }
+        }]
+      });
+    },
+      onApprove: function(data, actions) {
+      return actions.order.capture().then(function(details) {
+        alert('Pagamento aprovado!');
+        window.location.reload(true);
+      });
+    }
+  }).render('#paypal-button-container');
+</script>
     <!--================Home Banner Area =================-->
     <section class="banner_area">
       <div class="banner_inner d-flex align-items-center" style="background: #1497e5;">
@@ -149,13 +169,7 @@
                     </a>
                   </li>
                 </ul>
-                <div class="payment_item active">
-                  <div class="radion_btn">
-                    <input type="radio" id="f-option6" name="selector" />
-                    <label for="f-option6">Paypal </label>
-                    <img src="img/product/single-product/card.jpg" alt="" />
-                    <div class="check"></div>
-                  </div>
+                <div class="paypal-button-container">
                 </div>
                 <div class="creat_account">
                   <input type="checkbox" id="f-option4" name="selector" />
