@@ -1,9 +1,3 @@
-<?php
-$teste = 1; 
-if($teste){
-  echo "aaabbb";
-}
-?>
   <!--================Header Menu Area =================-->
     <? include("header.php"); ?>
     <!--================Header Menu Area =================-->

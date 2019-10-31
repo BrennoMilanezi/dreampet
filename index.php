@@ -1,4 +1,3 @@
-<? echo 'wil'; ?>
 
  <!--================Header Menu Area =================-->
   <? include("header.php"); ?>
