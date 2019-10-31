@@ -1,5 +1,5 @@
 <?php
-$teste = 1 
+$teste = 1; 
 if($teste){
   echo "aaa";
 }
