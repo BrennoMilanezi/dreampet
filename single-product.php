@@ -1,7 +1,7 @@
 <?php
 $teste = 1; 
 if($teste){
-  echo "aaa";
+  echo "aaabbb";
 }
 ?>
   <!--================Header Menu Area =================-->
