@@ -1,7 +1,7 @@
 <!--================Header Menu Area =================-->
   <? include("header.php"); ?>
 
-  <script src="https://www.paypal.com/sdk/js?client-id=Aej83Tcv3RvB1HnK8juOXdgQRYmuvG2N8l0_q4o20fdoD_oYrWX0ZSyi4fqyGEcAKnglWKGmKke2VbPP&currency=BRL"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=AYJDDzK6t9E8bJ2Fjd3MR_P4isKtohuM0KwoIaDT0N_0Y57-QcrHJcqeSvdTo6wpmRsbsrGPQpkUapwq&currency=BRL"></script>
 
 <script>
 
@@ -179,6 +179,7 @@
                   </li>
                 </ul>
                 <div id="paypal-button-container"></div>
+                <div id="boleto"><a href="./boleto/boleto_itau.php" target="_blank"><input type="button" name="boleto" value="Gerar Boleto" /></a></div>
                 <div class="creat_account">
                   <input type="checkbox" id="f-option4" name="selector" />
                   <label for="f-option4">Aceito e concordo com </label>
