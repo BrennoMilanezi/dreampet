@@ -1,5 +1,35 @@
 <!--================Header Menu Area =================-->
   <? include("header.php"); ?>
+
+  <script src="https://www.paypal.com/sdk/js?client-id=Aej83Tcv3RvB1HnK8juOXdgQRYmuvG2N8l0_q4o20fdoD_oYrWX0ZSyi4fqyGEcAKnglWKGmKke2VbPP&currency=BRL"></script>
+
+<script>
+
+
+  paypal.Buttons({
+
+    createOrder: function(data, actions) {
+      return actions.order.create({
+        purchase_units: [{
+          amount: {
+            value: 25.00
+          }
+        }]
+      });
+    },
+      onApprove: function(data, actions) {
+      return actions.order.capture().then(function(details) {
+        alert('Pagamento aprovado!');
+        /*preencheCampo('atualiza_boleto', <?echo $id_boleto_decode;?>, 'boleto', function(){
+          setTimeout(function(){ window.location.reload(true); }, 1000);
+        });*/
+      });
+    }
+  }).render('#paypal-button-container');
+
+
+
+</script>
     <!--================Header Menu Area =================-->
     <!--================Home Banner Area =================-->
     <section class="banner_area">
@@ -148,8 +178,7 @@
                     </a>
                   </li>
                 </ul>
-                <div class="paypal-button-container">
-                </div>
+                <div id="paypal-button-container"></div>
                 <div class="creat_account">
                   <input type="checkbox" id="f-option4" name="selector" />
                   <label for="f-option4">Aceito e concordo com </label>
