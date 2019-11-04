@@ -27,7 +27,7 @@ $valor_cobrado = 25.00;
 $dias_de_prazo_para_pagamento = 5;
 $taxa_boleto = 0;
 #$data_venc = date("d/m/Y", time() + ($dias_de_prazo_para_pagamento * 86400));  // Prazo de X dias OU informe data: "13/04/2006";
-$data_venc = data($vencimento_atual);
+$data_venc = '25/11/2019';
 $valor_cobrado = $valor_cobrado; // Valor - REGRA: Sem pontos na milhar e tanto faz com "." ou "," ou com 1 ou 2 ou sem casa decimal
 $valor_cobrado = str_replace(",", ".",$valor_cobrado);
 $valor_boleto= number_format($valor_cobrado+$taxa_boleto, 2, ',', '');
@@ -63,7 +63,7 @@ $dados_boleto = $database->query("SELECT c.curso, i.nome_fantasia, i.nome_instit
 								WHERE bs.id_boleto = '$id_boleto'");
 $r_dados = $database->fetch_object($dados_boleto);*/
 
-$instituicao = utf8_encode("TESTE")." - ".utf8_encode("TESTE")." Curso: ".utf8_encode("TESTE");
+$instituicao = "Compra de uma Ração";
 /*
 $e = $database->query($e);
 $s = $database->fetch_object($e);*/
