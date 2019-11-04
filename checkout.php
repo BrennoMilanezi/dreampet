@@ -179,13 +179,13 @@
                   </li>
                 </ul>
                 <div id="paypal-button-container"></div>
-                <div id="boleto"><a href="./boleto/boleto_itau.php" target="_blank"><input type="button" name="boleto" value="Gerar Boleto" /></a></div>
-                <div class="creat_account">
+                <div id="boleto"><a class="main_btn" href="./boleto/boleto_itau.php" target="_blank">Gerar Boleto</a></div>
+                <!--<div class="creat_account">
                   <input type="checkbox" id="f-option4" name="selector" />
                   <label for="f-option4">Aceito e concordo com </label>
                   <a href="#">termos & condições</a>
                 </div>
-                <a class="main_btn" href="#">Comprar</a>
+                <a class="main_btn" href="#">Comprar</a>-->
               </div>
             </div>
           </div>
