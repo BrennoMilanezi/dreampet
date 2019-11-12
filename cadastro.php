@@ -30,10 +30,16 @@
               <h3></h3>
               <form class="row contact_form" action="./" method="post" novalidate="novalidate">
                 <div class="col-md-12 form-group p_star">
+                  Nome Completo<input type="text" class="form-control" id="email" name="email">
+                </div>
+                <div class="col-md-12 form-group p_star">
                   Email<input type="text" class="form-control" id="email" name="email">
                 </div>
                 <div class="col-md-12 form-group p_star">
-                  Senha<input type="text" class="form-control" id="senha" name="senha">
+                  Senha<input type="text" class="form-control" id="senha" name="senha" onkeyup="preencheCampo('valida_senha', this.value, 'validar');">
+                </div>
+                <div class="col-md-12 form-group p_star">
+                  Confirmar Senha<input type="text" class="form-control" id="conf_senha" name="conf_senha" onkeyup="preencheCampo('valida_senha', this.value, 'validar');">
                 </div>
                 <input type="submit" name="logar" class="main_btn" value="Entrar" style="margin: auto;">
                 <div class="col-md-12 form-group p_star">
@@ -57,8 +63,9 @@
       /*Faz query verifica se esta cadastradado*/
       if(1 == 2){
         /*AUTENTICA*/
+        output_message("Cadastro Realizado com Sucesso");
       }else{
-        output_message("Cadastro não encontrado!");
+        output_message("");
       }
     }else{
       output_message("Faltou informar algum campo!");
