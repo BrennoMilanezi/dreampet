@@ -1,103 +1,83 @@
 <?php
-require_once ("config.php");
-
-class MySQLDatabase {
-	
-	private $connection;
-	public $last_query;
-	private $magic_quotes_active;
-	private $real_escape_string_exists;
-	private $db_name;
-	
-	function __construct($db_name = NULL) {
-		$this->db_name = $db_name;
-		$this->open_connection();
-		$this->magic_quotes_active = get_magic_quotes_gpc ();
-		$this->real_escape_string_exists = function_exists ( "mysql_real_escape_string" );
-	}
-	
-	public function open_connection() {
-		if(is_null($this->db_name)) $this->db_name = DB_NAME;
-	
-		$this->connection = mysql_connect ( DB_SERVER, DB_USER, DB_PASS );
-		
-		if (! $this->connection) {
-				die ( "Database connection failed: " . mysql_error () );
-
-		} else {
-
-			$db_select = mysql_select_db ( $this->db_name, $this->connection );
-			if (! $db_select) {
-				die ( "Database selection failed: " . mysql_error () );
-			}
-		}
-	}
-	
-	public function close_connection() {
-		if (isset ( $this->connection )) {
-			mysql_close ( $this->connection );
-			unset ( $this->connection );
-		}
-	}
-	
-	public function query($sql) {
-		$this->last_query = $sql;
-		$result = mysql_query ( $sql, $this->connection );
-		$this->confirm_query ( $result );
-		return $result;
-	}
-	
-	public function escape_value($value) {
-		if ($this->real_escape_string_exists) { // PHP v4.3.0 or higher
-			// undo any magic quote effects so mysql_real_escape_string can do the work
-			if ($this->magic_quotes_active) {
-				$value = stripslashes ( $value );
-			}
-			$value = mysql_real_escape_string ( $value );
-		} else { // before PHP v4.3.0
-			// if magic quotes aren't already on then add slashes manually
-			if (!$this->magic_quotes_active) {
-				$value = addslashes ( $value );
-			}
-			// if magic quotes are active, then the slashes already exist
-		}
-		return $value;
-	}
-	
-	// "database-neutral" methods
-	public function fetch_array($result_set) {
-		return mysql_fetch_array ( $result_set );
-	}
-	
-	public function fetch_object($result_set) {
-		return mysql_fetch_object($result_set);
-	}
-	
-	public function num_rows($result_set) {
-		return mysql_num_rows ( $result_set );
-	}
-	
-	public function insert_id() {
-		// get the last id inserted over the current db connection
-		return mysql_insert_id ( $this->connection );
-	}
-	
-	public function affected_rows() {
-		return mysql_affected_rows ( $this->connection );
-	}
-	
-	private function confirm_query($result) {
-		if (! $result) {
-			$output = "Database query failed: " . mysql_error () . "<br /><br />";
-			//$output .= "Last SQL query: " . $this->last_query;
-			die ( $output );
-		}
-	}
-	public function getDBName(){
-		return $this->db_name;	
-	}
-
+class PgSql
+{
+    private $db;       //The db handle
+    public  $num_rows; //Number of rows
+    public  $last_id;  //Last insert id
+    public  $aff_rows; //Affected rows
+    public function __construct()
+    {
+        require 'config.php';
+        $this->db = pg_connect("host=$host port=$port dbname=$dbname 
+                                user=$user password=$password");
+        if (!$this->db) exit();
+    }
+    public function close()
+    {
+        pg_close($this->db);
+    }
+    // For SELECT
+    // Returns one row as object
+    public function getRow($sql)
+    {
+        $result = pg_query($this->db, $sql);
+        $row = pg_fetch_object($result);
+        if (pg_last_error()) exit(pg_last_error());
+        return $row;
+    }
+    // For SELECT
+    // Returns an array of row objects
+    // Gets number of rows
+    public function getRows($sql)
+    {
+        $result = pg_query($this->db, $sql);
+        if (pg_last_error()) exit(pg_last_error());
+        $this->num_rows = pg_num_rows($result);
+        $rows = array();
+        while ($item = pg_fetch_object($result)) {
+            $rows[] = $item;
+        }
+        return $rows;
+    }
+    // For SELECT
+    // Returns one single column value as a string
+    public function getCol($sql)
+    {
+        $result = pg_query($this->db, $sql);
+        $col = pg_fetch_result($result, 0);
+        if (pg_last_error()) exit(pg_last_error());
+        return $col;
+    }
+    // For SELECT
+    // Returns array of all values in one column
+    public function getColValues($sql)
+    {
+        $result = pg_query($this->db, $sql);
+        $arr = pg_fetch_all_columns($result);
+        if (pg_last_error()) exit(pg_last_error());
+        return $arr;
+    }
+    // For INSERT
+    // Returns last insert $id
+    public function insert($sql, $id='id')
+    {
+        $sql = rtrim($sql, ';');
+        $sql .= ' RETURNING '.$id;
+        $result = pg_query($this->db, $sql);
+        if (pg_last_error()) exit(pg_last_error());
+        $this->last_id = pg_fetch_result($result, 0);
+        return $this->last_id;
+    }
+    // For UPDATE, DELETE and CREATE TABLE
+    // Returns number of affected rows
+    public function exec($sql)
+    {
+        $result = pg_query($this->db, $sql);
+        if (pg_last_error()) exit(pg_last_error());
+        $this->aff_rows = pg_affected_rows($result);
+        return $this->aff_rows;
+    }
 }
 
-$database = new MySQLDatabase ( );
+$pg = new PgSql();
 ?>
