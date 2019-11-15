@@ -139,8 +139,14 @@ function validaCPF($cpf) { // Verifiva se o n?mero digitado cont?m todos os digi
     }
 }
 
-function redirect_to($new_location) {
-    header("Location: " . $new_location);
-    exit;
+function redirect_to($location = NULL) {
+
+    if ($location != NULL) {
+
+        print ("<script language='JavaScript'>self.location.href=\"$location\";</script>");
+
+
+        exit;
+    }
 }
 ?>
