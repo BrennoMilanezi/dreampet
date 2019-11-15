@@ -138,4 +138,9 @@ function validaCPF($cpf) { // Verifiva se o n?mero digitado cont?m todos os digi
         return true;
     }
 }
+
+function redirect_to($new_location) {
+    header("Location: " . $new_location);
+    exit;
+}
 ?>

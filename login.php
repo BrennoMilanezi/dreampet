@@ -33,7 +33,7 @@
                   Email<input type="text" class="form-control" id="email" name="email">
                 </div>
                 <div class="col-md-12 form-group p_star">
-                  Senha<input type="text" class="form-control" id="senha" name="senha">
+                  Senha<input type="password" class="form-control" id="senha" name="senha">
                 </div>
                 <input type="submit" name="logar" class="main_btn" value="Entrar" style="margin: auto;">
                 <div class="col-md-12 form-group p_star">
@@ -53,17 +53,13 @@
    if($_POST['logar']){
     if(isset($_POST['email']) && isset($_POST['senha'])){
       $email = $_POST['email'];
-      $senha = addslashes($_POST['senha']);
+      $senha = sha1($_POST['senha']);
       /*Faz query verifica se esta cadastradado*/
-      $sql = "SELECT * FROM clientes WHERE email = '$email' AND senha = '$senha' AND status = 1";
-      $row = $pg->getRow($sql);
-      echo $row->id.'."';
-      echo $row->nome.'" by ';
-      echo $row->email.' (';
-      echo $row->senha.')';
-      echo '<br><br>';
+      $sql = "SELECT id FROM clientes WHERE email = '$email' AND senha = '$senha' AND status = 1";
       if($pg->getRow($sql)){
-        echo "aaa";
+        $row = $pg->getRow($sql);
+        $_SESSION['id'] = $row->id;
+        redirect_to("./category.php");
       }else{
         output_message("Cadastro não encontrado!");
       }

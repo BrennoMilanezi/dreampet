@@ -98,11 +98,11 @@
                     <i class="ti-shopping-cart"></i>
                   </a>
                 </li>
-
                 <li class="nav-item">
                   <a href="login.php" class="icons">
                     <i class="ti-user" aria-hidden="true"></i>
                   </a>
+                  <?if($_SESSION['id']){ echo $_SESSION['nome']; }?>
                 </li>
               </ul>
             </div>
