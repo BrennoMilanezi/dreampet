@@ -53,16 +53,22 @@
    if($_POST['logar']){
     if(isset($_POST['email']) && isset($_POST['senha'])){
       $email = $_POST['email'];
-      $senha = $_POST['senha'];
+      $senha = addslashes($_POST['senha']);
       /*Faz query verifica se esta cadastradado*/
-      $teste = 1;
-      if($teste != 1){
-        /*AUTENTICA*/
+      $sql = "SELECT * FROM clientes WHERE email = '$email' AND senha = '$senha' AND status = 1";
+      $row = $pg->getRow($sql);
+      echo $row->id.'."';
+      echo $row->nome.'" by ';
+      echo $row->email.' (';
+      echo $row->senha.')';
+      echo '<br><br>';
+      if($pg->getRow($sql)){
+        echo "aaa";
       }else{
-        echo "Cadastro não encontrado!";
+        output_message("Cadastro não encontrado!");
       }
     }else{
-      echo "Faltou informar algum campo!";
+      output_message("Faltou informar algum campo!");
     }
    }
    ?>
