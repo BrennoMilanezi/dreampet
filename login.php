@@ -57,6 +57,7 @@
       /*Faz query verifica se esta cadastradado*/
       $sql = "SELECT id FROM clientes WHERE email = '$email' AND senha = '$senha' AND status = 1";
       if($pg->getRow($sql)){
+        session_start();
         $row = $pg->getRow($sql);
         $_SESSION['id'] = $row->id;
         $_SESSION['nome'] = $row->nome;
