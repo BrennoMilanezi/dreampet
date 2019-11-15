@@ -58,10 +58,10 @@
       if(1 == 2){
         /*AUTENTICA*/
       }else{
-        output_message("Cadastro não encontrado!");
+        echo "Cadastro não encontrado!";
       }
     }else{
-      output_message("Faltou informar algum campo!");
+      echo "Faltou informar algum campo!";
     }
    }
    ?>

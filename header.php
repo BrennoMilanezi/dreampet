@@ -89,7 +89,7 @@
             <div class="col-lg-5 pr-0">
               <ul class="nav navbar-nav navbar-right right_nav pull-right">
                 <li class="nav-item">
-                    <a href="#" class="icons">
+                    <a href="category.php" class="icons">
                       <i class="ti-search" aria-hidden="true"></i>
                     </a>
                   </li>
@@ -100,7 +100,7 @@
                 </li>
 
                 <li class="nav-item">
-                  <a href="#" class="icons">
+                  <a href="login.php" class="icons">
                     <i class="ti-user" aria-hidden="true"></i>
                   </a>
                 </li>
