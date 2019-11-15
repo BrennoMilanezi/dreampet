@@ -59,6 +59,7 @@
       if($pg->getRow($sql)){
         $row = $pg->getRow($sql);
         $_SESSION['id'] = $row->id;
+        $_SESSION['nome'] = $row->nome;
         redirect_to("./category.php");
       }else{
         output_message("Cadastro não encontrado!");
