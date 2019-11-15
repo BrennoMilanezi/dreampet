@@ -28,7 +28,7 @@
           <div class="row">
             <div class="col-lg-12">
               <h3></h3>
-              <form class="row contact_form" action="./" method="post" novalidate="novalidate">
+              <form class="row contact_form" action="./login.php" method="post" novalidate="novalidate">
                 <div class="col-md-12 form-group p_star">
                   Email<input type="text" class="form-control" id="email" name="email">
                 </div>
