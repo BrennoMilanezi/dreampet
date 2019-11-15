@@ -1,6 +1,6 @@
 <!--================Header Menu Area =================-->
   <? include("header.php"); 
-  include("./includes/inicializa.php");
+  //include("./includes/inicializa.php");
   ?>
     <!--================Header Menu Area =================-->
     <!--================Home Banner Area =================-->
@@ -55,7 +55,8 @@
       $email = $_POST['email'];
       $senha = $_POST['senha'];
       /*Faz query verifica se esta cadastradado*/
-      if(1 == 2){
+      $teste = 1;
+      if($teste != 1){
         /*AUTENTICA*/
       }else{
         echo "Cadastro não encontrado!";
