@@ -1,5 +1,7 @@
 <!--================Header Menu Area =================-->
-  <? include("header.php"); ?>
+  <? 
+  $and_busca = "";
+  include("header.php"); ?>
     <!--================Header Menu Area =================-->
 
     <!--================Home Banner Area =================-->
@@ -29,171 +31,19 @@
           <div class="col-lg-9">
             <div class="product_top_bar">
               <div class="left_dorp">
-                <select class="sorting">
-                  <option value="1">Mais Relevantes</option>
-                  <option value="2">Menor Preço</option>
-                  <option value="4">Maior Preço</option>
+                <select class="sorting" onchange="preencheCampo('busca_produtos', this.value+'@'+document.getElementById('categoria').value+'@'+document.getElementById('amount').value, 'filtro')">
+                  <option value="0">Mais Relevantes</option>
+                  <option value="1">Menor Preço</option>
+                  <option value="2">Maior Preço</option>
                 </select>
               </div>
             </div>
             
             <div class="latest_product_inner">
               <div class="row">
-                <div class="col-lg-4 col-md-6">
-                  <div class="single-product">
-                    <div class="product-img">
-                      <img style="width: 31% !important;"
-                        class="card-img"
-                        src="img/product/todos/p1.jpg"
-                        alt=""
-                      />
-                      <div class="p_icon">
-                        <a href="#">
-                          <i class="ti-shopping-cart"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="product-btm">
-                      <a href="#" class="d-block">
-                        <h4>Produto</h4>
-                      </a>
-                      <div class="mt-3">
-                        <span class="mr-4">$25.00</span>
-                        <del>$35.00</del>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                  <div class="single-product">
-                    <div class="product-img">
-                      <img style="width: 54% !important;"
-                        class="card-img"
-                        src="img/product/todos/p2.jpg"
-                        alt=""
-                      />
-                      <div class="p_icon">
-                        <a href="#">
-                          <i class="ti-shopping-cart"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="product-btm">
-                      <a href="#" class="d-block">
-                        <h4>Produto</h4>
-                      </a>
-                      <div class="mt-3">
-                        <span class="mr-4">$25.00</span>
-                        <del>$35.00</del>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                  <div class="single-product">
-                    <div class="product-img">
-                      <img style="width: 70% !important;"
-                        class="card-img"
-                        src="img/product/todos/p3.jpg"
-                        alt=""
-                      />
-                      <div class="p_icon">
-                        <a href="#">
-                          <i class="ti-shopping-cart"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="product-btm">
-                      <a href="#" class="d-block">
-                        <h4>Produto</h4>
-                      </a>
-                      <div class="mt-3">
-                        <span class="mr-4">$25.00</span>
-                        <del>$35.00</del>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                  <div class="single-product">
-                    <div class="product-img">
-                      <img style="width: 70% !important;"
-                        class="card-img"
-                        src="img/product/todos/p3.jpg"
-                        alt=""
-                      />
-                      <div class="p_icon">
-                        <a href="#">
-                          <i class="ti-shopping-cart"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="product-btm">
-                      <a href="#" class="d-block">
-                        <h4>Produto</h4>
-                      </a>
-                      <div class="mt-3">
-                        <span class="mr-4">$25.00</span>
-                        <del>$35.00</del>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                  <div class="single-product">
-                    <div class="product-img">
-                      <img style="width: 54% !important;"
-                        class="card-img"
-                        src="img/product/todos/p2.jpg"
-                        alt=""
-                      />
-                      <div class="p_icon">
-                        <a href="#">
-                          <i class="ti-shopping-cart"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="product-btm">
-                      <a href="#" class="d-block">
-                        <h4>Produto</h4>
-                      </a>
-                      <div class="mt-3">
-                        <span class="mr-4">$25.00</span>
-                        <del>$35.00</del>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                  <div class="single-product">
-                    <div class="product-img">
-                      <img style="width: 31% !important;"
-                        class="card-img"
-                        src="img/product/todos/p1.jpg"
-                        alt=""
-                      />
-                      <div class="p_icon">
-                        <a href="#">
-                          <i class="ti-shopping-cart"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="product-btm">
-                      <a href="#" class="d-block">
-                        <h4>Produto</h4>
-                      </a>
-                      <div class="mt-3">
-                        <span class="mr-4">$25.00</span>
-                        <del>$35.00</del>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              	<div id="busca_produtos">
+	              	<? include("lista_produtos.php"); ?>
+	             </div>
               </div>
             </div>
           </div>
@@ -205,7 +55,19 @@
                   <h3>Categorias</h3>
                 </div>
                 <div class="widgets_inner">
-                  <ul class="list">
+                	<input type="radio" id="categoria" name="categoria" value="0" checked>
+  					<label>Todas</label>
+  					<input type="radio" id="categoria" name="categoria" value="1" >
+  					<label>Brinquedos</label>
+  					<input type="radio" id="categoria" name="categoria" value="2" >
+  					<label>Petiscos</label>
+  					<input type="radio" id="categoria" name="categoria" value="3" >
+  					<label>Ração</label>
+  					<input type="radio" id="categoria" name="categoria" value="4" >
+  					<label>Roupas</label>
+  					<input type="radio" id="categoria" name="categoria" value="5" >
+  					<label>Acessórios</label>
+                  <!--<ul class="list">
                     <li>
                       <a href="#">Brinquedos</a>
                     </li>
@@ -221,7 +83,7 @@
                     <li>
                       <a href="#">Acessórios</a>
                     </li>
-                  </ul>
+                  </ul>-->
                 </div>
               </aside>
               <aside class="left_widgets p_filter_widgets">
@@ -233,7 +95,7 @@
                     <div id="slider-range"></div>
                     <div class="">
                       <label for="amount">Preço : </label>
-                      <input type="text" id="amount" readonly />
+                      <input onchange="preencheCampo('busca_produtos', this.value+'@'+document.getElementById('categoria').value+'@'+document.getElementById('amount').value, 'filtro')" type="text" id="amount" readonly />
                     </div>
                   </div>
                 </div>

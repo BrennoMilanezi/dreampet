@@ -20,6 +20,7 @@
   <!-- main css -->
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
+  <script src="ajax/preenche.js"></script>
   <script src="https://www.paypal.com/sdk/js?client-id=AYJDDzK6t9E8bJ2Fjd3MR_P4isKtohuM0KwoIaDT0N_0Y57-QcrHJcqeSvdTo6wpmRsbsrGPQpkUapwq&currency=BRL"></script>
   <script>
   paypal.Buttons({
