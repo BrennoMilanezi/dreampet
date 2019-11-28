@@ -32,7 +32,7 @@
           <div class="col-lg-9">
             <div class="product_top_bar">
               <div class="left_dorp">
-                <select class="sorting" id="ordenar" onchange="preencheCampo('busca_produtos', this.value+'@'+document.getElementById('categoria').value+'@'+document.getElementById('amount').value, 'filtro')">
+                <select class="sorting" id="ordenar" onchange="preencheCampo('busca_produtos', this.value+'@'+document.getElementById('categoria').value+'@'+document.getElementById('preco').value, 'filtro')">
                   <option value="0">Mais Relevantes</option>
                   <option value="1">Menor Preço</option>
                   <option value="2">Maior Preço</option>

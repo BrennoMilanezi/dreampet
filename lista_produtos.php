@@ -3,7 +3,7 @@
 	roupa - img/product/todos/p2.jpg - style="width: 54% !important;"
 	bolinha - img/product/todos/p3.jpg - style="width: 70% !important;"*/
 	$sql = "SELECT * FROM produtos WHERE status = 1 $and_busca";
-  echo "$sql";
+  echo "!--$sql-->";
 	foreach($pg->getRows($sql) as $row) { ?>
 <div class="col-lg-4 col-md-6">
   <div class="single-product">
