@@ -8,7 +8,7 @@
 <div class="col-lg-4 col-md-6">
   <div class="single-product">
     <div class="product-img">
-      <img style="<?=$row->tamanho?>"
+      <img style="width: 31% !important;"
         class="card-img"
         src="img/product/todos/p1.jpg"
         alt=""

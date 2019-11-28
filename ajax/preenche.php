@@ -13,6 +13,9 @@ if($campo == "busca_produtos" && $tipo == "filtro"){
 	$preco_array = explode(" ", $preco);
 	$preco_menor = $preco_array[0];
 	$preco_maior = $preco_array[1];
+	if(!$preco_maior){
+		$preco_maior = 500;
+	}
 	
 	$and_busca = "";
 	
@@ -27,7 +30,6 @@ if($campo == "busca_produtos" && $tipo == "filtro"){
 	}elseif($ordem == 2){
 		$and_busca .= " ORDER BY valor DESC ";
 	}
-	echo "asdasdasdasd";
 	include("../lista_produtos.php");
 }
 ?>
