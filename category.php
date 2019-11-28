@@ -57,15 +57,15 @@
                 </div>
                 <div class="widgets_inner">
                 	<input type="radio" id="categoria" name="categoria" value="0" checked>
-  					<label>Todas</label>
+  					<label>Todas</label><br>
   					<input type="radio" id="categoria" name="categoria" value="1" >
-  					<label>Brinquedos</label>
+  					<label>Brinquedos</label><br>
   					<input type="radio" id="categoria" name="categoria" value="2" >
-  					<label>Petiscos</label>
+  					<label>Petiscos</label><br>
   					<input type="radio" id="categoria" name="categoria" value="3" >
-  					<label>Ração</label>
+  					<label>Ração</label><br>
   					<input type="radio" id="categoria" name="categoria" value="4" >
-  					<label>Roupas</label>
+  					<label>Roupas</label><br>
   					<input type="radio" id="categoria" name="categoria" value="5" >
   					<label>Acessórios</label>
                   <!--<ul class="list">
