@@ -32,7 +32,7 @@
           <div class="col-lg-9">
             <div class="product_top_bar">
               <div class="left_dorp">
-                <select class="sorting" onchange="preencheCampo('busca_produtos', this.value+'@'+document.getElementById('categoria').value+'@'+document.getElementById('amount').value, 'filtro')">
+                <select class="sorting" id="ordenar" onchange="preencheCampo('busca_produtos', this.value+'@'+document.getElementById('categoria').value+'@'+document.getElementById('amount').value, 'filtro')">
                   <option value="0">Mais Relevantes</option>
                   <option value="1">Menor Preço</option>
                   <option value="2">Maior Preço</option>
@@ -54,17 +54,17 @@
                   <h3>Categorias</h3>
                 </div>
                 <div class="widgets_inner">
-                	<input type="radio" id="categoria" name="categoria" value="0" onclick="preencheCampo('busca_produtos', this.value+'@'+document.getElementById('categoria').value+'@'+document.getElementById('amount').value, 'filtro')">
+                	<input type="radio" id="categoria" name="categoria" value="0" onclick="preencheCampo('busca_produtos', document.getElementById('ordenar').value+'@'+this.value+'@'+document.getElementById('amount').value, 'filtro')">
   					<label>Todas</label><br>
-  					<input type="radio" id="categoria" name="categoria" value="1" onclick="preencheCampo('busca_produtos', this.value+'@'+document.getElementById('categoria').value+'@'+document.getElementById('amount').value, 'filtro')" >
+  					<input type="radio" id="categoria" name="categoria" value="1" onclick="preencheCampo('busca_produtos', document.getElementById('ordenar').value+'@'+this.value+'@'+document.getElementById('amount').value, 'filtro')" >
   					<label>Brinquedos</label><br>
-  					<input type="radio" id="categoria" name="categoria" value="2" onclick="preencheCampo('busca_produtos', this.value+'@'+document.getElementById('categoria').value+'@'+document.getElementById('amount').value, 'filtro')" >
+  					<input type="radio" id="categoria" name="categoria" value="2" onclick="preencheCampo('busca_produtos', document.getElementById('ordenar').value+'@'+this.value+'@'+document.getElementById('amount').value, 'filtro')" >
   					<label>Petiscos</label><br>
-  					<input type="radio" id="categoria" name="categoria" value="3" onclick="preencheCampo('busca_produtos', this.value+'@'+document.getElementById('categoria').value+'@'+document.getElementById('amount').value, 'filtro')" >
+  					<input type="radio" id="categoria" name="categoria" value="3" onclick="preencheCampo('busca_produtos', document.getElementById('ordenar').value+'@'+this.value+'@'+document.getElementById('amount').value, 'filtro')" >
   					<label>Ração</label><br>
-  					<input type="radio" id="categoria" name="categoria" value="4" onclick="preencheCampo('busca_produtos', this.value+'@'+document.getElementById('categoria').value+'@'+document.getElementById('amount').value, 'filtro')">
+  					<input type="radio" id="categoria" name="categoria" value="4" onclick="preencheCampo('busca_produtos', document.getElementById('ordenar').value+'@'+this.value+'@'+document.getElementById('amount').value, 'filtro')">
   					<label>Roupas</label><br>
-  					<input type="radio" id="categoria" name="categoria" value="5" onclick="preencheCampo('busca_produtos', this.value+'@'+document.getElementById('categoria').value+'@'+document.getElementById('amount').value, 'filtro')">
+  					<input type="radio" id="categoria" name="categoria" value="5" onclick="preencheCampo('busca_produtos', document.getElementById('ordenar').value+'@'+this.value+'@'+document.getElementById('amount').value, 'filtro')">
   					<label>Acessórios</label>
                   <!--<ul class="list">
                     <li>
