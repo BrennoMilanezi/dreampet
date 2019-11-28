@@ -2,7 +2,7 @@
 	/*racao - img/product/todos/p1.jpg - style="width: 31% !important;"
 	roupa - img/product/todos/p2.jpg - style="width: 54% !important;"
 	bolinha - img/product/todos/p3.jpg - style="width: 70% !important;"*/
-	$sql = "SELECT * FROM produtos WHERE status = 1 $and_busca";
+	$sql = "SELECT * FROM produtos $and_busca";
   echo "$sql";
 	print_r($pg->getRows($sql));
 	foreach($pg->getRows($sql) as $row) { ?>
