@@ -56,17 +56,17 @@
                   <h3>Categorias</h3>
                 </div>
                 <div class="widgets_inner">
-                	<input type="radio" id="categoria" name="categoria" value="0" checked>
+                	<input type="radio" id="categoria" name="categoria" value="0" onclick="preencheCampo('busca_produtos', this.value+'@'+document.getElementById('categoria').value+'@'+document.getElementById('amount').value, 'filtro')">
   					<label>Todas</label><br>
-  					<input type="radio" id="categoria" name="categoria" value="1" >
+  					<input type="radio" id="categoria" name="categoria" value="1" onclick="preencheCampo('busca_produtos', this.value+'@'+document.getElementById('categoria').value+'@'+document.getElementById('amount').value, 'filtro')" >
   					<label>Brinquedos</label><br>
-  					<input type="radio" id="categoria" name="categoria" value="2" >
+  					<input type="radio" id="categoria" name="categoria" value="2" onclick="preencheCampo('busca_produtos', this.value+'@'+document.getElementById('categoria').value+'@'+document.getElementById('amount').value, 'filtro')" >
   					<label>Petiscos</label><br>
-  					<input type="radio" id="categoria" name="categoria" value="3" >
+  					<input type="radio" id="categoria" name="categoria" value="3" onclick="preencheCampo('busca_produtos', this.value+'@'+document.getElementById('categoria').value+'@'+document.getElementById('amount').value, 'filtro')" >
   					<label>Ração</label><br>
-  					<input type="radio" id="categoria" name="categoria" value="4" >
+  					<input type="radio" id="categoria" name="categoria" value="4" onclick="preencheCampo('busca_produtos', this.value+'@'+document.getElementById('categoria').value+'@'+document.getElementById('amount').value, 'filtro')">
   					<label>Roupas</label><br>
-  					<input type="radio" id="categoria" name="categoria" value="5" >
+  					<input type="radio" id="categoria" name="categoria" value="5" onclick="preencheCampo('busca_produtos', this.value+'@'+document.getElementById('categoria').value+'@'+document.getElementById('amount').value, 'filtro')">
   					<label>Acessórios</label>
                   <!--<ul class="list">
                     <li>
