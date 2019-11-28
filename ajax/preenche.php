@@ -27,7 +27,7 @@ if($campo == "busca_produtos" && $tipo == "filtro"){
 	}elseif($ordem == 2){
 		$and_busca .= " ORDER BY valor DESC ";
 	}
-	
-	include("../lista_produtos.php");
+	echo "asdasdasdasd";
+	include("./lista_produtos.php");
 }
 ?>
