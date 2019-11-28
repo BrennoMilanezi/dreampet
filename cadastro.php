@@ -29,28 +29,21 @@
             <div class="col-lg-12">
               <form class="row contact_form" action="./" method="post" novalidate="novalidate">
                 <div class="col-md-6 form-group p_star">
-                  <input type="text" class="form-control" id="first" name="name">
-                  <span class="placeholder" data-placeholder="Nome"></span>
+                  <input type="text" class="form-control" id="first" name="name" placeholder="Nome">
                 </div>
                 <div class="col-md-6 form-group p_star">
-                  <input type="text" class="form-control" id="last" name="name">
-                  <span class="placeholder" data-placeholder="Sobrenome"></span>
+                  <input type="text" class="form-control" id="last" name="name" placeholder="Sobrenome">
                 </div>
                 <div class="col-md-6 form-group p_star">
-                  <input type="text" class="form-control" id="number" name="number">
-                  <span class="placeholder" data-placeholder="Telefone"></span>
+                  <input type="text" class="form-control" id="number" name="number" placeholder="Telefone">>
                 </div>
                 <div class="col-md-6 form-group p_star">
-                  <input type="text" class="form-control" id="email" name="compemailany">
-                  <span class="placeholder" data-placeholder="Email"></span>
+                  <input type="text" class="form-control" id="email" name="compemailany" placeholder="Email">
                 </div>
                 <div class="col-md-12 form-group p_star">
-                  <input type="text" class="form-control" id="add1" name="add1">
-                  <span class="placeholder" data-placeholder="Endereço"></span>
-                </div>
+                  <input type="text" class="form-control" id="add1" name="add1" placeholder="Endereço">
                 <div class="col-md-12 form-group p_star">
-                  <input type="text" class="form-control" id="city" name="city">
-                  <span class="placeholder" data-placeholder="Cidade"></span>
+                  <input type="text" class="form-control" id="city" name="city" placeholder="Cidade">
                 </div>
                 <div class="col-md-12 form-group p_star">
                   <select class="country_select" style="display: none;">
