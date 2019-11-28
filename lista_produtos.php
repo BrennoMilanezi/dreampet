@@ -9,9 +9,9 @@
 <div class="col-lg-4 col-md-6">
   <div class="single-product">
     <div class="product-img">
-      <img style="<?=$row->tamanho?>"
+      <img style=""
         class="card-img"
-        src="<?=$row->imagem?>"
+        src=""
         alt=""
       />
       <div class="p_icon">
@@ -22,11 +22,11 @@
     </div>
     <div class="product-btm">
       <a href="#" class="d-block">
-        <h4><?=$row->produto?></h4>
+        <h4></h4>
       </a>
       <div class="mt-3">
-        <span class="mr-4">$<?=$row->valor?></span>
-        <del><?=$row->valor_antigo?></del>
+        <span class="mr-4">$</span>
+        <del></del>
       </div>
     </div>
   </div>
