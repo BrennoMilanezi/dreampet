@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="product-btm">
-      <a href="#" class="d-block">
+      <a href="./single-product.php" class="d-block">
         <h4><?=$row->produto?></h4>
       </a>
       <div class="mt-3">
