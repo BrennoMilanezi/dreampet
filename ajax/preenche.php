@@ -28,6 +28,6 @@ if($campo == "busca_produtos" && $tipo == "filtro"){
 		$and_busca .= " ORDER BY valor DESC ";
 	}
 	echo "asdasdasdasd";
-	include("./lista_produtos.php");
+	include("../lista_produtos.php");
 }
 ?>
