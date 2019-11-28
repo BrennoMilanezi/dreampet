@@ -90,12 +90,18 @@
                   <h3>Filtrar pelo Preço</h3>
                 </div>
                 <div class="widgets_inner">
-                  <div class="range_item">
+                  <!--<div class="range_item">
                     <div id="slider-range"></div>
                     <div class="">
                       <label for="amount">Preço : </label>
                       <input onchange="preencheCampo('busca_produtos', this.value+'@'+document.getElementById('categoria').value+'@'+document.getElementById('amount').value, 'filtro')" type="text" id="amount" readonly />
-                    </div>
+                    </div>-->
+                    <select class="sorting" id="preco" onchange="preencheCampo('busca_produtos', document.getElementById('categoria').value+'@'+document.getElementById('categoria').value+'@'+this.value, 'filtro')">
+                  		<option value="$0 $10">$0 - $10</option>
+                  		<option value="$10 $25">$10 - $25</option>
+                 		<option value="$25 $50">$25 - $50</option>
+                 		<option value="$50 $100">$50 - $100</option>
+                	</select>
                   </div>
                 </div>
               </aside>
