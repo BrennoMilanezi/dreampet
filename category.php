@@ -41,10 +41,8 @@
             </div>
             
             <div class="latest_product_inner">
-              <div class="row">
-              	<div id="busca_produtos">
-	              	<? include("lista_produtos.php"); ?>
-	             </div>
+              <div class="row" id="busca_produtos">
+					<? include("lista_produtos.php"); ?>
               </div>
             </div>
           </div>
