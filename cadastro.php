@@ -61,7 +61,7 @@
                 <div class="col-md-12 form-group p_star">
                   Confirmar Senha<input type="text" class="form-control" id="conf_senha" name="conf_senha" onkeyup="preencheCampo('valida_senha', this.value, 'validar');">
                 </div>
-                <input type="submit" name="logar" class="main_btn" value="Entrar" style="margin: auto;">
+                <input type="submit" name="logar" class="main_btn" value="Cadastrar" style="margin: auto;">
               </form>
             </div>
           </div>
