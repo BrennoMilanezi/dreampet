@@ -61,6 +61,7 @@
         $row = $pg->getRow($sql);
         $_SESSION['id'] = $row->id;
         $_SESSION['nome'] = $row->nome;
+        output_message("Login Efetuado!");
         redirect_to("./category.php");
       }else{
         output_message("Cadastro não encontrado!");

@@ -49,6 +49,10 @@
       });
     }
   }).render('#paypal-button-container');
+
+  function redirect_submit(value){
+    window.location.href = "https://dreampet.herokuapp.com/category.php?b="+value;
+  }
 </script>
 </head>
 
@@ -99,10 +103,11 @@
             <div class="col-lg-5 pr-0">
               <ul class="nav navbar-nav navbar-right right_nav pull-right">
                 <li class="nav-item">
-                    <a href="category.php" class="icons">
+                    <input name="busca" id="busca" type="text">
+                    <a onclick="redirect_submit(document.getElementById('busca').value);" class="icons">
                       <i class="ti-search" aria-hidden="true"></i>
                     </a>
-                  </li>
+                </li>
                 <li class="nav-item">
                   <a href="cart.php" class="icons">
                     <i class="ti-shopping-cart"></i>
