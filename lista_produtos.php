@@ -1,8 +1,8 @@
 <? 
   $and_busca_nome = "";
   if(isset($_GET['b']) && $_GET['b'] != ""){
-    $nome_busca = $_GET['b'];
-    $and_busca_nome = " AND produto LIKE '%$nome_busca%' ";
+    $nome_busca = strtoupper($_GET['b']);
+    $and_busca_nome = " AND UPPER(produto) LIKE '%$nome_busca%' ";
   }
 	/*racao - img/product/todos/p1.jpg - style="width: 31% !important;"
 	roupa - img/product/todos/p2.jpg - style="width: 54% !important;"

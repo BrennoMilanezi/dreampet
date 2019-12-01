@@ -54,17 +54,17 @@
                   <h3>Categorias</h3>
                 </div>
                 <div class="widgets_inner">
-                	<input type="radio" id="categoria" name="categoria" value="0" onclick="preencheCampo('busca_produtos', document.getElementById('ordenar').value+'@'+this.value+'@'+document.getElementById('amount').value, 'filtro')">
+                	<input type="radio" id="categoria" name="categoria" value="0" onclick="preencheCampo('busca_produtos', document.getElementById('ordenar').value+'@'+this.value+'@'+document.getElementById('preco').value, 'filtro')">
   					<label>Todas</label><br>
-  					<input type="radio" id="categoria" name="categoria" value="1" onclick="preencheCampo('busca_produtos', document.getElementById('ordenar').value+'@'+this.value+'@'+document.getElementById('amount').value, 'filtro')" >
+  					<input type="radio" id="categoria" name="categoria" value="1" onclick="preencheCampo('busca_produtos', document.getElementById('ordenar').value+'@'+this.value+'@'+document.getElementById('preco').value, 'filtro')" >
   					<label>Brinquedos</label><br>
-  					<input type="radio" id="categoria" name="categoria" value="2" onclick="preencheCampo('busca_produtos', document.getElementById('ordenar').value+'@'+this.value+'@'+document.getElementById('amount').value, 'filtro')" >
+  					<input type="radio" id="categoria" name="categoria" value="2" onclick="preencheCampo('busca_produtos', document.getElementById('ordenar').value+'@'+this.value+'@'+document.getElementById('preco').value, 'filtro')" >
   					<label>Petiscos</label><br>
-  					<input type="radio" id="categoria" name="categoria" value="3" onclick="preencheCampo('busca_produtos', document.getElementById('ordenar').value+'@'+this.value+'@'+document.getElementById('amount').value, 'filtro')" >
+  					<input type="radio" id="categoria" name="categoria" value="3" onclick="preencheCampo('busca_produtos', document.getElementById('ordenar').value+'@'+this.value+'@'+document.getElementById('preco').value, 'filtro')" >
   					<label>Ração</label><br>
-  					<input type="radio" id="categoria" name="categoria" value="4" onclick="preencheCampo('busca_produtos', document.getElementById('ordenar').value+'@'+this.value+'@'+document.getElementById('amount').value, 'filtro')">
+  					<input type="radio" id="categoria" name="categoria" value="4" onclick="preencheCampo('busca_produtos', document.getElementById('ordenar').value+'@'+this.value+'@'+document.getElementById('preco').value, 'filtro')">
   					<label>Roupas</label><br>
-  					<input type="radio" id="categoria" name="categoria" value="5" onclick="preencheCampo('busca_produtos', document.getElementById('ordenar').value+'@'+this.value+'@'+document.getElementById('amount').value, 'filtro')">
+  					<input type="radio" id="categoria" name="categoria" value="5" onclick="preencheCampo('busca_produtos', document.getElementById('ordenar').value+'@'+this.value+'@'+document.getElementById('preco').value, 'filtro')">
   					<label>Acessórios</label>
                   <!--<ul class="list">
                     <li>
@@ -93,8 +93,8 @@
                   <!--<div class="range_item">
                     <div id="slider-range"></div>
                     <div class="">
-                      <label for="amount">Preço : </label>
-                      <input onchange="preencheCampo('busca_produtos', this.value+'@'+document.getElementById('categoria').value+'@'+document.getElementById('amount').value, 'filtro')" type="text" id="amount" readonly />
+                      <label for="preco">Preço : </label>
+                      <input onchange="preencheCampo('busca_produtos', this.value+'@'+document.getElementById('categoria').value+'@'+document.getElementById('preco').value, 'filtro')" type="text" id="preco" readonly />
                     </div>-->
                     <select class="sorting" id="preco" onchange="preencheCampo('busca_produtos', document.getElementById('categoria').value+'@'+document.getElementById('categoria').value+'@'+this.value, 'filtro')">
                     	<option value="$0 $500">$0 - $500</option>
