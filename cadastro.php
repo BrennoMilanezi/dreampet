@@ -63,7 +63,7 @@
                 <div class="col-md-6 form-group p_star">
                   Confirmar Senha<input type="password" class="form-control" id="conf_senha" name="conf_senha" placeholder="********">
                 </div>
-                <input type="submit" name="logar" onsubmit="senhaValida(document.getElementById('senha').value)" class="main_btn" value="Cadastrar" style="margin: auto;">
+                <input type="submit" name="logar" onclick="return senhaValida(document.getElementById('senha').value);" class="main_btn" value="Cadastrar" style="margin: auto;">
               </form>
             </div>
           </div>
