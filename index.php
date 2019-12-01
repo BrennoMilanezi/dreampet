@@ -1,6 +1,6 @@
 
  <!--================Header Menu Area =================-->
-  <? include("header.php"); ?>
+  <? include("header.php"); include("./includes/inicializa.php");?>
   <!--================Header Menu Area =================-->
 
   <!--================Home Banner Area =================-->
