@@ -5,6 +5,7 @@ session_start();
 <html lang="pt-br">
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script src='https://www.google.com/recaptcha/api.js?hl=pt-BR'></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153503940-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
