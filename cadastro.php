@@ -76,7 +76,7 @@
    <? include("footer.php"); 
 
    if($_POST['logar']){
-    if(isset($_POST['nome']) && isset($_POST['telefone']) && isset($_POST['email']) && isset($_POST['endereco']) && isset($_POST['cidade']) && isset($_POST['estado']) && isset($_POST['senha']) && isset($_POST['conf_senha'])){
+    if($_POST['nome'] != "" && $_POST['telefone'] != "" && $_POST['email'] != "" && $_POST['endereco'] != "" && $_POST['cidade'] != "" && $_POST['estado'] != "" && $_POST['senha'] != "" && $_POST['conf_senha'] != ""){
       if($_POST['senha'] == $_POST['conf_senha']){
         /*Faz query verifica se esta cadastradado*/
         $sql = "SELECT id FROM clientes WHERE email = '$email' AND status = 1";
