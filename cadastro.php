@@ -1,7 +1,14 @@
-<!--================Header Menu Area =================-->
   <? include("header.php"); 
   include("./includes/inicializa.php");
   ?>
+  <!--================Header Menu Area =================-->
+<script type="text/javascript">
+  function senhaValida($senha) {
+    return preg_match('/[a-z]/', $senha) // tem pelo menos uma letra minúscula
+     && preg_match('/[0-9]/', $senha) // tem pelo menos um número
+     && preg_match('/^[\w$@]{8,}$/', $senha); // tem 8 ou mais caracteres
+}
+</script>
     <!--================Header Menu Area =================-->
     <!--================Home Banner Area =================-->
     <section class="banner_area">
@@ -28,41 +35,35 @@
           <div class="row">
             <div class="col-lg-12">
               <form class="row contact_form" action="./" method="post" novalidate="novalidate">
-                <div class="col-md-6 form-group p_star">
-                  <input type="text" class="form-control" id="first" name="name" placeholder="Nome">
+                <div class="col-md-12 form-group p_star">
+                  <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
                 </div>
                 <div class="col-md-6 form-group p_star">
-                  <input type="text" class="form-control" id="last" name="name" placeholder="Sobrenome">
+                  <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone">
                 </div>
                 <div class="col-md-6 form-group p_star">
-                  <input type="text" class="form-control" id="number" name="number" placeholder="Telefone">
-                </div>
-                <div class="col-md-6 form-group p_star">
-                  <input type="text" class="form-control" id="email" name="compemailany" placeholder="Email">
+                  <input type="text" class="form-control" id="email" name="email" placeholder="Email">
                 </div>
                 <div class="col-md-12 form-group p_star">
-                  <input type="text" class="form-control" id="add1" name="add1" placeholder="Endereço">
+                  <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Endereço">
                 </div>
-                <div class="col-md-4 form-group p_star">
-                  <input type="text" class="form-control" id="city" name="city" placeholder="Cidade">
+                <div class="col-md-6 form-group p_star">
+                  <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade">
                 </div>
-                <div class="col-md-4 form-group p_star">
-                  <select class="country_select" style="display: none;">
+                <div class="col-md-6 form-group p_star">
+                  <select class="country_select">
                     <option value="1">Espírito Santo</option>
                     <option value="2">São Paulo</option>
                     <option value="4">Rio de Janeiro</option>
-                  </select><div class="nice-select country_select" tabindex="0"><span class="current">Espírito Santo</span><ul class="list"><li data-value="1" class="option selected">Espírito Santo</li><li data-value="2" class="option">São Paulo</li><li data-value="4" class="option">Rio de Janeiro</li></ul></div>
-                </div>
-                <div class="col-md-4 form-group">
-                  <input type="text" class="form-control" id="zip" name="zip" placeholder="CEP">
+                  </select>
                 </div>
                 <div class="col-md-6 form-group p_star">
-                  Senha<input type="text" class="form-control" id="senha" name="senha" onkeyup="preencheCampo('valida_senha', this.value, 'validar');"><span class="popuptext" id="myPopup">A senha deve conter no mínimo 8 caracteres com números, letras e pelo menos 1 caracter especial.</span>
+                  Senha<input type="text" class="form-control" id="senha" name="senha"><span class="popuptext" id="myPopup">A senha deve conter no mínimo 8 caracteres com números, letras e pelo menos 1 caracter especial.</span>
                 </div>
                 <div class="col-md-6 form-group p_star">
-                  Confirmar Senha<input type="text" class="form-control" id="conf_senha" name="conf_senha" onkeyup="preencheCampo('valida_senha', this.value, 'validar');">
+                  Confirmar Senha<input type="text" class="form-control" id="conf_senha" name="conf_senha">
                 </div>
-                <input type="submit" name="logar" class="main_btn" value="Cadastrar" style="margin: auto;">
+                <input type="submit" name="logar" onsubmit="senhaValida(document.getElementById('senha').value)" class="main_btn" value="Cadastrar" style="margin: auto;">
               </form>
             </div>
           </div>
@@ -75,15 +76,29 @@
    <? include("footer.php"); 
 
    if($_POST['logar']){
-    if(isset($_POST['email']) && isset($_POST['senha'])){
-      $email = $_POST['email'];
-      $senha = $_POST['senha'];
-      /*Faz query verifica se esta cadastradado*/
-      if(1 == 2){
-        /*AUTENTICA*/
-        output_message("Cadastro Realizado com Sucesso");
+    if(isset($_POST['nome']) && isset($_POST['telefone']) && isset($_POST['email']) && isset($_POST['endereco']) && isset($_POST['cidade']) && isset($_POST['estado']) && isset($_POST['senha']) && isset($_POST['conf_senha'])){
+      if($_POST['senha'] == $_POST['conf_senha']){
+        /*Faz query verifica se esta cadastradado*/
+        $sql = "SELECT id FROM clientes WHERE email = '$email' AND status = 1";
+        if(!$pg->getRow($sql)){
+          /*AUTENTICA*/
+          $nome = addslashes(utf8_decode($_POST['nome']));
+          $telefone = addslashes(utf8_decode($_POST['telefone']));
+          $email = addslashes(utf8_decode($_POST['email']));
+          $endereco = addslashes(utf8_decode($_POST['endereco']));
+          $cidade = addslashes(utf8_decode($_POST['cidade']));
+          $estado = addslashes(utf8_decode($_POST['estado']));
+          $senha = sha1($_POST['senha']);
+          $sql_insert = "INSERT INTO clientes (nome, email, senha, endereco) VALUES ('$nome', '$email', '$senha', '$endereco')";
+          $_SESSION['id'] = $pg->insert($sql_insert);
+          $_SESSION['nome'] = $nome;
+          output_message("Cadastro Realizado com Sucesso");
+          redirect_to("./category.php");
+        }else{
+          output_message("Email já cadastrado");
+        } 
       }else{
-        output_message("");
+        output_message("Confirmação da senha diferente!");
       }
     }else{
       output_message("Faltou informar algum campo!");
