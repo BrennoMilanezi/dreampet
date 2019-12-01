@@ -57,7 +57,7 @@
                   <input type="text" class="form-control" id="zip" name="zip" placeholder="CEP">
                 </div>
                 <div class="col-md-6 form-group p_star">
-                  Senha<input type="text" class="form-control" id="senha" name="senha" onkeyup="preencheCampo('valida_senha', this.value, 'validar');">
+                  Senha<input type="text" class="form-control" id="senha" name="senha" onkeyup="preencheCampo('valida_senha', this.value, 'validar');"><span class="popuptext" id="myPopup">A senha deve conter no mínimo 8 caracteres com números, letras e pelo menos 1 caracter especial.</span>
                 </div>
                 <div class="col-md-6 form-group p_star">
                   Confirmar Senha<input type="text" class="form-control" id="conf_senha" name="conf_senha" onkeyup="preencheCampo('valida_senha', this.value, 'validar');">
