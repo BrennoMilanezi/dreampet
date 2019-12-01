@@ -34,7 +34,7 @@
         <div class="billing_details">
           <div class="row">
             <div class="col-lg-12">
-              <form class="row contact_form" action="" method="post" novalidate="novalidate">
+              <form class="row contact_form" action="./cadastro.php" method="post" novalidate="novalidate">
                 <div class="col-md-12 form-group p_star">
                   <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
                 </div>
@@ -51,7 +51,7 @@
                   <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade">
                 </div>
                 <div class="col-md-6 form-group p_star">
-                  <select class="country_select">
+                  <select id="estado" name="estado" class="country_select">
                     <option value="1">Espírito Santo</option>
                     <option value="2">São Paulo</option>
                     <option value="4">Rio de Janeiro</option>
