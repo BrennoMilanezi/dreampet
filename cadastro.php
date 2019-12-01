@@ -34,7 +34,7 @@
         <div class="billing_details">
           <div class="row">
             <div class="col-lg-12">
-              <form class="row contact_form" action="./" method="post" novalidate="novalidate">
+              <form class="row contact_form" action="" method="post" novalidate="novalidate">
                 <div class="col-md-12 form-group p_star">
                   <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
                 </div>
