@@ -35,30 +35,31 @@
                   <input type="text" class="form-control" id="last" name="name" placeholder="Sobrenome">
                 </div>
                 <div class="col-md-6 form-group p_star">
-                  <input type="text" class="form-control" id="number" name="number" placeholder="Telefone">>
+                  <input type="text" class="form-control" id="number" name="number" placeholder="Telefone">
                 </div>
                 <div class="col-md-6 form-group p_star">
                   <input type="text" class="form-control" id="email" name="compemailany" placeholder="Email">
                 </div>
                 <div class="col-md-12 form-group p_star">
                   <input type="text" class="form-control" id="add1" name="add1" placeholder="Endereço">
-                <div class="col-md-12 form-group p_star">
+                </div>
+                <div class="col-md-4 form-group p_star">
                   <input type="text" class="form-control" id="city" name="city" placeholder="Cidade">
                 </div>
-                <div class="col-md-12 form-group p_star">
+                <div class="col-md-4 form-group p_star">
                   <select class="country_select" style="display: none;">
                     <option value="1">Espírito Santo</option>
                     <option value="2">São Paulo</option>
                     <option value="4">Rio de Janeiro</option>
                   </select><div class="nice-select country_select" tabindex="0"><span class="current">Espírito Santo</span><ul class="list"><li data-value="1" class="option selected">Espírito Santo</li><li data-value="2" class="option">São Paulo</li><li data-value="4" class="option">Rio de Janeiro</li></ul></div>
                 </div>
-                <div class="col-md-12 form-group">
+                <div class="col-md-4 form-group">
                   <input type="text" class="form-control" id="zip" name="zip" placeholder="CEP">
                 </div>
-                <div class="col-md-12 form-group p_star">
+                <div class="col-md-6 form-group p_star">
                   Senha<input type="text" class="form-control" id="senha" name="senha" onkeyup="preencheCampo('valida_senha', this.value, 'validar');">
                 </div>
-                <div class="col-md-12 form-group p_star">
+                <div class="col-md-6 form-group p_star">
                   Confirmar Senha<input type="text" class="form-control" id="conf_senha" name="conf_senha" onkeyup="preencheCampo('valida_senha', this.value, 'validar');">
                 </div>
                 <input type="submit" name="logar" class="main_btn" value="Cadastrar" style="margin: auto;">
