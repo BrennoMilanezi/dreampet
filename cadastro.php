@@ -58,10 +58,10 @@
                   </select>
                 </div>
                 <div class="col-md-6 form-group p_star">
-                  Senha<input type="password" class="form-control" id="senha" name="senha"><span class="popuptext" id="myPopup">A senha deve conter no mínimo 8 caracteres com números, letras e pelo menos 1 caracter especial.</span>
+                  Senha<input type="password" class="form-control" id="senha" name="senha" placeholder="********"><span class="popuptext" id="myPopup">A senha deve conter no mínimo 8 caracteres com números, letras e pelo menos 1 caracter especial.</span>
                 </div>
                 <div class="col-md-6 form-group p_star">
-                  Confirmar Senha<input type="password" class="form-control" id="conf_senha" name="conf_senha">
+                  Confirmar Senha<input type="password" class="form-control" id="conf_senha" name="conf_senha" placeholder="********">
                 </div>
                 <input type="submit" name="logar" onsubmit="senhaValida(document.getElementById('senha').value)" class="main_btn" value="Cadastrar" style="margin: auto;">
               </form>
