@@ -17,6 +17,9 @@ session_start();
   <!-- Required meta tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id" content="370559816862-76r748t6ebkit28ukb5podktdm1d4bve.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
   <link rel="icon" href="img/favicon.png" type="image/png" />
   <title>Dream PET</title>
   <!-- Bootstrap CSS -->
