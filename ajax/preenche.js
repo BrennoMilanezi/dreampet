@@ -24,7 +24,7 @@ function preencheCampo(campo, valor, tipo, callback) {
 		
 		// Exibindo mensagem de carregar
 		if(ret.readyState == 1 || ret.readyState == 3) {
-			document.getElementById(''+ campo +'').innerHTML = '<font color="gray">Buscando...</font>';
+			document.getElementById(''+ campo +'').innerHTML = '<font color="black">Buscando...</font>';
 		}
 	
 		// Verifica se o Ajax realizou todas as operações corretamente (essencial)

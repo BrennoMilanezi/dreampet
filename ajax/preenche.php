@@ -9,8 +9,7 @@ if($campo == "busca_produtos" && $tipo == "filtro"){
 	$valor = explode("@", $valor);
 	$ordem = $valor[0];
 	$categoria = $valor[1];
-	$preco = str_replace("$", "", $valor[2]);
-	$preco_array = explode(" ", $preco);
+	$preco_array = explode("-", $valor[2]);
 	$preco_menor = $preco_array[0];
 	$preco_maior = $preco_array[1];
 	if(!$preco_maior){
