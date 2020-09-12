@@ -1,14 +1,33 @@
 <?php
 
-function output_message($message = "") {
+function output_message($message, $titulo = "Alerta", $icon = "success", $redirect_to = "", $button = "Ok") {
 
     if (!empty($message)) {
 
-        echo "<script language=\"javascript\" type=\"text/javascript\">
+        if($redirect_to != ""){
+            echo "<script language=\"javascript\" type=\"text/javascript\">
 
-            alert('{$message}');
+                swal({
+                  title: \"$titulo\",
+                  text: \"$message\",
+                  icon: \"$icon\",
+                  button: \"$button\"
+                }).then((value) => {
+                    self.location.href=\"$redirect_to\";
+                });
 
-        </script>";
+            </script>";
+        }else{
+            echo "<script language=\"javascript\" type=\"text/javascript\">
+
+                swal({
+                  title: \"$titulo\",
+                  text: \"$message\",
+                  icon: \"$icon\",
+                  button: \"$button\"
+                });
+            </script>";
+        }
     } else {
 
         echo "";

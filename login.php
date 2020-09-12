@@ -30,10 +30,10 @@
               <h3></h3>
               <form class="row contact_form" action="./login.php" method="post" novalidate="novalidate">
                 <div class="col-md-12 form-group p_star">
-                  Email<input type="text" class="form-control" id="email" name="email">
+                  Email<input type="text" class="form-control" id="email" name="email" required>
                 </div>
                 <div class="col-md-12 form-group p_star">
-                  Senha<input type="password" class="form-control" id="senha" name="senha">
+                  Senha<input type="password" class="form-control" id="senha" name="senha" required>
                 </div>
                 <div class="col-md-12 form-group p_star">
                   <div class="g-recaptcha" data-sitekey="6Ld7gMUUAAAAABHPTYwhQ33YnEUgpUpKEMF-PfUk"></div>
@@ -96,16 +96,15 @@
             $row = $pg->getRow($sql);
             $_SESSION['id'] = $row->id;
             $_SESSION['nome'] = $row->nome;
-            output_message("Login Efetuado!");
-            redirect_to("./category.php");
+            output_message("Login efetuado com sucesso", "Login Efetuado", "success", "./category.php");
           }else{
-            output_message("Cadastro não encontrado!");
+            output_message("Este login não foi efetuado com sucesso", "Cadastro não encontrado", "warning");
           }
         }else{
-          output_message("Faltou informar algum campo!");
+          output_message("Faltou informar algum campo!", "Alerta", "warning");
         }
     }else{
-      output_message("Por favor clicar no ReCaptcha!");
+      output_message("Por favor clicar no ReCaptcha!", "ReCaptcha", "warning");
     }
    }
    ?>

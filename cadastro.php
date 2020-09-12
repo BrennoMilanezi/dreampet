@@ -36,19 +36,19 @@
             <div class="col-lg-12">
               <form class="row contact_form" action="./cadastro.php" method="post" novalidate="novalidate">
                 <div class="col-md-12 form-group p_star">
-                  <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+                  <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" required>
                 </div>
                 <div class="col-md-6 form-group p_star">
-                  <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone">
+                  <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone" required>
                 </div>
                 <div class="col-md-6 form-group p_star">
-                  <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                  <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
                 </div>
                 <div class="col-md-12 form-group p_star">
-                  <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Endereço">
+                  <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Endereço" required>
                 </div>
                 <div class="col-md-6 form-group p_star">
-                  <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade">
+                  <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade" required>
                 </div>
                 <div class="col-md-6 form-group p_star">
                   <select id="estado" name="estado" class="country_select">
@@ -58,10 +58,10 @@
                   </select>
                 </div>
                 <div class="col-md-6 form-group p_star">
-                  Senha<input type="password" class="form-control" id="senha" name="senha" placeholder="********"><span class="popuptext" id="myPopup">A senha deve conter no mínimo 8 caracteres com números, letras e pelo menos 1 caracter especial.</span>
+                  Senha<input type="password" class="form-control" id="senha" name="senha" placeholder="********" required><span class="popuptext" id="myPopup">A senha deve conter no mínimo 8 caracteres com números, letras e pelo menos 1 caracter especial.</span>
                 </div>
                 <div class="col-md-6 form-group p_star">
-                  Confirmar Senha<input type="password" class="form-control" id="conf_senha" name="conf_senha" placeholder="********">
+                  Confirmar Senha<input type="password" class="form-control" id="conf_senha" name="conf_senha" placeholder="********" required>
                 </div>
                 <input type="submit" name="logar" onclick="return senhaValida(document.getElementById('senha').value);" class="main_btn" value="Cadastrar" style="margin: auto;">
               </form>
@@ -92,16 +92,15 @@
           $sql_insert = "INSERT INTO clientes (nome, email, senha, endereco) VALUES ('$nome', '$email', '$senha', '$endereco')";
           $_SESSION['id'] = $pg->insert($sql_insert);
           $_SESSION['nome'] = $nome;
-          output_message("Cadastro Realizado com Sucesso");
-          redirect_to("./category.php");
+          output_message("Seu cadastro foi realizado com sucesso", "Cadastro Realizado", "success", "./category.php");
         }else{
-          output_message("Email já cadastrado");
+          output_message("E-mail já esta cadastrado em nossa base, caso não ", "E-mail já cadastrado", "warning");
         } 
       }else{
-        output_message("Confirmação da senha diferente!");
+    	output_message("Confirmação da senha diferente!", "Senhas Diferentes", "warning");
       }
     }else{
-      output_message("Faltou informar algum campo!");
+    	output_message("Faltou informar algum campo obrigatório!", "Alerta", "warning");
     }
    }
    ?>
