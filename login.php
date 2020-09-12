@@ -23,7 +23,7 @@
 
     <!--================Checkout Area =================-->
     <section>
-      <div class="container" style="margin: 5%;">
+      <div class="container" style="margin-top: 3%;">
         <div class="billing_details">
           <div class="row">
             <div class="col-lg-6" style="margin: auto;">
